@@ -5,7 +5,7 @@ function getRandomHexColor() {
 }
 
 let span = document.querySelector(".color");
-let button = document.querySelector("change.color");
+// let button = document.querySelector("change-color");
 
 button .addEventListener("click", () => {
   let color = getRandomHexColor();
