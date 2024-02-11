@@ -1,31 +1,30 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Get the login form
-    var loginForm = document.querySelector('.login-form');
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector('.login-form');
 
-    // Add a submit event listener to the form
-    loginForm.addEventListener('submit', function (event) {
-      // Prevent the default form submission (page reload)
-      event.preventDefault();
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission behavior (page reload)
 
-      // Get form elements
-      var emailInput = loginForm.elements.email;
-      var passwordInput = loginForm.elements.password;
+    const emailInput = form.elements.email;
+    const passwordInput = form.elements.password;
 
-      // Check if any fields are empty
-      if (!emailInput.value || !passwordInput.value) {
-        alert('Please fill in all fields.');
-      } else {
-        // Create an object with field names as properties and field values as values
-        formData = {
-          email: emailInput.value,
-          password: passwordInput.value
-        };
+    // Check if any field is empty
+    if (!emailInput.value || !passwordInput.value) {
+      alert('Please fill in all fields');
+      return;
+    }
 
-        // Display the object in the console
-        console.log(formData);
+    // Collect field values into an object
+    const formData = {
+      email: emailInput.value,
+      password: passwordInput.value
+    };
 
-        // Clear the form fields
-        loginForm.reset();
-      }
-    });
+    // Display the collected data in the console
+    console.log(formData);
+
+    // Clear form fields
+    form.reset();
   });
+});
+
+  
