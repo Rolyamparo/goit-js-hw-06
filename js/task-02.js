@@ -7,3 +7,4 @@ for (let ingredient of ingredients) {
     li.innerText = ingredient;
     ul.appendChild(li);   
 }
+
